@@ -1,0 +1,33 @@
+{
+  "name": "alfred",
+  "version": "1.0.0",
+  "description": "Slack bot for my satisfaction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon --watch index.js --watch lib index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/beldar/alfred.git"
+  },
+  "keywords": [
+    "bot",
+    "slack",
+    "buttler"
+  ],
+  "author": "Marti Planellas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beldar/alfred/issues"
+  },
+  "homepage": "https://github.com/beldar/alfred#readme",
+  "dependencies": {
+    "botkit": "^0.2.0"
+  },
+  "engines": {
+    "node": "6.0.0",
+    "npm": "3.8.6"
+  }
+}
