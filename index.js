@@ -3,7 +3,7 @@ if (!process.env.SLACK_TOKEN) {
   process.exit(1);
 }
 
-const controller = require('./lib/controller');
+const { controller } = require('./lib/controller');
 const commands   = require('./lib/conversation');
 const convBase   = './lib/conversation/';
 const server     = require('./lib/server');
