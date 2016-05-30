@@ -6,8 +6,8 @@ module.exports = (err, server) => {
   server.post('/webhooks', (req, res) => {
 
     let data = req.body;
-    console.log('Webhook event received', data);
-    console.log(req.headers);
+    console.log('===> Webhook event received: ', data);
+    console.log('===> Headers: ',req.headers);
 
     let event = req.headers['x-github-event'];
 
@@ -22,7 +22,7 @@ module.exports = (err, server) => {
         break;
 
       default:
-        console.log('Event not recognized: ', event);
+        console.log('===> Event not recognized: ', event);
     }
     res.send();
   })

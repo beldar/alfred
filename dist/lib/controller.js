@@ -3,9 +3,13 @@
 var Botkit = require('botkit');
 var config = require('../config');
 
+var storage = process.env.OPENSHIFT_DATA_DIR || config.JSON_STORAGE;
+
+console.log('===> Setting storage: ', storage);
+
 var controller = Botkit.slackbot({
     debug: true,
-    json_file_store: process.env.OPENSHIFT_DATA_DIR || config.JSON_STORAGE
+    json_file_store: storage
 });
 
 var bot = controller.spawn({
