@@ -1,7 +1,7 @@
 'use strict';
 
 if (!process.env.SLACK_TOKEN) {
-  console.log('===> Error: Specify token in environment');
+  console.log('Error: Specify token in environment');
   process.exit(1);
 }
 
@@ -19,7 +19,7 @@ commands.forEach(function (command) {
   controller.hears(command.patterns, command.scope, require(convBase + command.handler));
 });
 
-console.log('===> PORT: ', port);
+console.log('PORT: ', port);
 controller.setupWebserver(port, server);
 
 /**

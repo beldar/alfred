@@ -4,7 +4,7 @@ var Botkit = require('botkit');
 var config = require('../config');
 var mongoUri = process.env.OPENSHIFT_MONGODB_DB_HOST ? 'mongodb://' + process.env.MONGO_USER + ':' + process.env.MONGO_PASSWORD + '@' + process.env.OPENSHIFT_MONGODB_DB_HOST + ':' + process.env.OPENSHIFT_MONGODB_DB_PORT + '/alfred' : config.MONGO;
 
-console.log('===> Connecting to mongo: ', mongoUri);
+console.log('Connecting to mongo: ', mongoUri);
 
 var storage = require('./botkit-storage-mongo')({ mongoUri: mongoUri });
 
@@ -17,14 +17,12 @@ var bot = controller.spawn({
   token: process.env.SLACK_TOKEN
 }).startRTM();
 
-controller.on('message_received', function (bot, message) {
-  return console.log('===> Message received: ', message);
-});
+//controller.on('message_received', (bot, message) => console.log('Message received: ', message));
 controller.on('direct_mention', function (bot, message) {
-  return console.log('===> Direct mention: ', message);
+  return console.log('Direct mention: ', message);
 });
 controller.on('direct_message', function (bot, message) {
-  return console.log('===> Direct message: ', message);
+  return console.log('Direct message: ', message);
 });
 
 var onExit = function onExit(err) {
