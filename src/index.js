@@ -9,13 +9,23 @@ const convBase   = './lib/conversation/';
 const server     = require('./lib/server');
 const config     = require('./config');
 const port       = (process.env.PORT || config.SERVER_PORT);
+const ip         = (process.env.OPENSHIFT_NODEJS_IP || config.IP);
+const express    = require('express');
+const bodyParser = require('body-parser');
 
 commands.forEach(command => {
   controller.hears(command.patterns, command.scope, require(convBase + command.handler));
 });
 
-console.log('PORT: ', port);
-controller.setupWebserver(port, server);
+//controller.setupWebserver(port, server);
+
+const webserver = express();
+webserver.use(bodyParser.json());
+webserver.use(bodyParser.urlencoded({ extended: true }));
+webserver.listen(port, ip, () => {
+  console.log(`Listening on ${ip}:${port}`);
+  server(webserver);
+});
 
 /**
  * Message structure

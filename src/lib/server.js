@@ -2,7 +2,7 @@ const prComment       = require('./github/prComment');
 const prUpdate        = require('./github/prUpdate');
 
 
-module.exports = (err, server) => {
+module.exports = (server) => {
   server.post('/webhooks', (req, res) => {
 
     let data = req.body;

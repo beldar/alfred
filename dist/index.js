@@ -14,13 +14,23 @@ var convBase = './lib/conversation/';
 var server = require('./lib/server');
 var config = require('./config');
 var port = process.env.PORT || config.SERVER_PORT;
+var ip = process.env.OPENSHIFT_NODEJS_IP || config.IP;
+var express = require('express');
+var bodyParser = require('body-parser');
 
 commands.forEach(function (command) {
   controller.hears(command.patterns, command.scope, require(convBase + command.handler));
 });
 
-console.log('PORT: ', port);
-controller.setupWebserver(port, server);
+//controller.setupWebserver(port, server);
+
+var webserver = express();
+webserver.use(bodyParser.json());
+webserver.use(bodyParser.urlencoded({ extended: true }));
+webserver.listen(port, ip, function () {
+  console.log('Listening on ' + ip + ':' + port);
+  server(webserver);
+});
 
 /**
  * Message structure

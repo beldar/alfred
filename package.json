@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/beldar/alfred#readme",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "botkit": "^0.2.0",
+    "express": "^4.13.4",
     "mongodb": "^2.1.20",
     "mongojs": "^2.4.0"
   },
