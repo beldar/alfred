@@ -9,7 +9,7 @@ module.exports = (bot, message) => {
 
     if (!user) {
       user = {
-          id: message.user
+          userId: message.user
       };
     }
     user.private_channel = message.channel;

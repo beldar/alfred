@@ -18,7 +18,7 @@ const askUsername = (response, convo) => {
 
         if (!user) {
           user = {
-              id: message.user,
+              userId: message.user,
           };
         }
 

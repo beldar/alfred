@@ -12,7 +12,7 @@ module.exports = function (bot, message) {
 
     if (!user) {
       user = {
-        id: message.user
+        userId: message.user
       };
     }
 
