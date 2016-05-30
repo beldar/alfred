@@ -4,8 +4,6 @@ var Botkit = require('botkit');
 var config = require('../config');
 var mongoUri = process.env.OPENSHIFT_MONGODB_DB_HOST ? 'mongodb://' + process.env.MONGO_USER + ':' + process.env.MONGO_PASSWORD + '@' + process.env.OPENSHIFT_MONGODB_DB_HOST + ':' + process.env.OPENSHIFT_MONGODB_DB_PORT + '/alfred' : config.MONGO;
 
-console.log('Connecting to mongo: ', mongoUri);
-
 var storage = require('./botkit-storage-mongo')({ mongoUri: mongoUri });
 
 var controller = Botkit.slackbot({
