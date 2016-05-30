@@ -46,6 +46,7 @@ function getStorage(db, zone) {
       table.findOne({userId: userId}, cb);
     },
     save: function(data, cb) {
+      delete data._id;
       table.findOne({userId: data.userId}, function(err, doc) {
         if (!doc) {
           table.insert(data, cb);
