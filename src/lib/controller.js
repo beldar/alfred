@@ -1,7 +1,7 @@
 const Botkit = require('botkit');
 const config = require('../config');
 const mongoUri = process.env.OPENSHIFT_MONGODB_DB_HOST ?
-                 `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/`
+                 `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/alfred`
                  : config.MONGO;
 
 console.log('===> Connecting to mongo: ', mongoUri);
