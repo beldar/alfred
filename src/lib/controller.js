@@ -1,12 +1,12 @@
 const Botkit = require('botkit');
 const config = require('../config');
 const mongoUri = process.env.OPENSHIFT_MONGODB_DB_HOST ?
-                 `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/alfred`
+                 `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/`
                  : config.MONGO;
 
-const storage = require('./botkit-storage-mongo')({mongoUri: mongoUri});
+console.log('===> Connecting to mongo: ', mongoUri);
 
-//console.log('===> Setting storage: ', storage);
+const storage = require('./botkit-storage-mongo')({mongoUri: mongoUri});
 
 const controller = Botkit.slackbot({
   debug  : false,
@@ -17,9 +17,9 @@ const bot = controller.spawn({
   token: process.env.SLACK_TOKEN
 }).startRTM();
 
-controller.on('message_received', (bot, message) => console.log('Message received: ', message));
-controller.on('direct_mention', (bot, message) => console.log('Direct mention: ', message));
-controller.on('direct_message', (bot, message) => console.log('Direct message: ', message));
+controller.on('message_received', (bot, message) => console.log('===> Message received: ', message));
+controller.on('direct_mention', (bot, message) => console.log('===> Direct mention: ', message));
+controller.on('direct_message', (bot, message) => console.log('===> Direct message: ', message));
 
 const onExit = (err) => {
   console.log('Shutting down...');
