@@ -3,7 +3,7 @@ const config = require('../config');
 
 const controller = Botkit.slackbot({
     debug: true,
-    json_file_store: config.JSON_STORAGE
+    json_file_store: process.env.OPENSHIFT_DATA_DIR || config.JSON_STORAGE
 });
 
 const bot = controller.spawn({
