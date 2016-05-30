@@ -27,4 +27,8 @@ module.exports = function (server) {
     }
     res.send();
   });
+
+  server.get('/ping', function (req, res) {
+    res.send();
+  });
 };

@@ -25,5 +25,9 @@ module.exports = (server) => {
         console.log('Event not recognized: ', event);
     }
     res.send();
-  })
+  });
+
+  server.get('/ping', (req, res) => {
+    res.send();
+  });
 };
