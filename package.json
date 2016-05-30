@@ -1,6 +1,6 @@
 {
   "name": "alfred",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Slack bot for your satisfaction",
   "main": "index.js",
   "scripts": {

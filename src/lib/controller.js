@@ -1,7 +1,7 @@
 const Botkit = require('botkit');
 const config = require('../config');
 const mongoUri = process.env.OPENSHIFT_MONGODB_DB_HOST ?
-                 `mongodb://${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/alfred`
+                 `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.OPENSHIFT_MONGODB_DB_HOST}:${process.env.OPENSHIFT_MONGODB_DB_PORT}/alfred`
                  : config.MONGO;
 
 const storage = require('./botkit-storage-mongo')({mongoUri: mongoUri});
@@ -9,7 +9,7 @@ const storage = require('./botkit-storage-mongo')({mongoUri: mongoUri});
 //console.log('===> Setting storage: ', storage);
 
 const controller = Botkit.slackbot({
-  debug  : true,
+  debug  : false,
   storage: storage
 });
 
@@ -17,24 +17,14 @@ const bot = controller.spawn({
   token: process.env.SLACK_TOKEN
 }).startRTM();
 
+controller.on('message_received', (bot, message) => console.log('Message received: ', message));
+controller.on('direct_mention', (bot, message) => console.log('Direct mention: ', message));
+controller.on('direct_message', (bot, message) => console.log('Direct message: ', message));
+
 const onExit = (err) => {
   console.log('Shutting down...');
 
   storage.close();
-  // controller.storage.users.all((err, users) => {
-  //   if (!err) {
-  //     users
-  //     .filter(user => user.private_channel)
-  //     .forEach((user) => {
-  //         bot.say({
-  //           text: `Sorry sir, it seems I'm shutting down`,
-  //           channel: user.private_channel
-  //         });
-  //     });
-  //   } else {
-  //     console.error(err);
-  //   }
-  // });
 };
 
 process.on('exit', onExit);
