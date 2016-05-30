@@ -4,6 +4,7 @@ var _require = require('../controller');
 
 var controller = _require.controller;
 
+var utils = require('../utils');
 
 var askUsername = function askUsername(response, convo) {
   convo.ask('Could I ask for your Github username sir?', function (response, convo) {

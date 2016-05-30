@@ -4,6 +4,7 @@ var _require = require('../controller');
 
 var controller = _require.controller;
 
+var utils = require('../utils');
 
 module.exports = function (bot, message) {
   controller.storage.users.get(message.user, function (err, user) {

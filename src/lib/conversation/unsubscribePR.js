@@ -1,4 +1,5 @@
 const { controller } = require('../controller');
+const utils          = require('../utils');
 
 module.exports = (bot, message) => {
   controller.storage.users.get(message.user, function(err, user) {
