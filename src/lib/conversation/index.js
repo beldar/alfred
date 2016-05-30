@@ -2,6 +2,11 @@ const normalScope = 'direct_message,direct_mention,mention';
 
 module.exports = [
   {
+    patterns: [],
+    scope   : 'direct_message',
+    handler : 'savePrivateChannel'
+  },
+  {
     patterns: ['hello', 'hi'],
     scope   : normalScope,
     handler : 'hi',

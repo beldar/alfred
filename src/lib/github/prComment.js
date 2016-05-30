@@ -24,7 +24,7 @@ module.exports = ( data ) => {
         if (user.listen_prs && user.gh_username && pr_author === user.gh_username) {
           bot.say({
             text: formatMessage(data),
-            channel: user.pr_channel
+            channel: user.private_channel
           });
         }
       })

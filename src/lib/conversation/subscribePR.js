@@ -4,12 +4,12 @@ const utils          = require('../utils');
 const askUsername = (response, convo) => {
     convo.ask('Could I ask for your Github username sir?', (response, convo) => {
       let gh_username = response.text;
-      let pr_channel = response.channel;
+      let private_channel = response.channel;
       let listen_prs = true;
 
       let userData = {
         gh_username,
-        pr_channel,
+        private_channel,
         listen_prs
       };
 

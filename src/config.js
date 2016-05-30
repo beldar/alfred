@@ -1,4 +1,4 @@
 module.exports = {
-  JSON_STORAGE: './storage',
+  MONGO: 'mongodb://localhost:27017/alfred',
   SERVER_PORT : 3000
 };

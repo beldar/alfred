@@ -9,12 +9,12 @@ var utils = require('../utils');
 var askUsername = function askUsername(response, convo) {
   convo.ask('Could I ask for your Github username sir?', function (response, convo) {
     var gh_username = response.text;
-    var pr_channel = response.channel;
+    var private_channel = response.channel;
     var listen_prs = true;
 
     var userData = {
       gh_username: gh_username,
-      pr_channel: pr_channel,
+      private_channel: private_channel,
       listen_prs: listen_prs
     };
 
