@@ -14,7 +14,7 @@ const askUsername = (response, convo) => {
       };
 
       controller.storage.users.get(response.user, function(err, user) {
-        if (err) return utils.handleStorageError(convo, '', true);
+        if (err) return utils.handleStorageError(err, convo, '', true);
 
         if (!user) {
           user = {
@@ -25,7 +25,7 @@ const askUsername = (response, convo) => {
         user = Object.assign(user, userData);
 
         controller.storage.users.save(user, function(err, id) {
-          if (err) return utils.handleStorageError(convo, '', true);
+          if (err) return utils.handleStorageError(err, convo, '', true);
 
           convo.say(`Excellent sir, from now on you'll receive a message every time that there's an update with your PRs`);
           convo.next();

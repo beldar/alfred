@@ -11,7 +11,9 @@ module.exports = {
     });
   },
 
-  handleStorageError(bot, message, isConvo) {
+  handleStorageError(err, bot, message, isConvo) {
+    console.error('Storage error: ', err);
+    
     let apology = 'Apologies sir, there seems to be a problem with my storage.';
 
     if (isConvo) {
@@ -19,7 +21,7 @@ module.exports = {
       bot.next();
       return;
     }
-    
+
     this.addReaction(bot, message, '-1');
     bot.reply(message, apology);
   }

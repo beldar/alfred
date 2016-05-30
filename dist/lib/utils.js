@@ -12,7 +12,9 @@ module.exports = {
       }
     });
   },
-  handleStorageError: function handleStorageError(bot, message, isConvo) {
+  handleStorageError: function handleStorageError(err, bot, message, isConvo) {
+    console.error('Storage error: ', err);
+
     var apology = 'Apologies sir, there seems to be a problem with my storage.';
 
     if (isConvo) {
