@@ -53,7 +53,7 @@ module.exports = (bot, message) => {
     .slice(0, 10)
     .forEach(hour => {
       let time = moment.unix(hour.time).format('hh:mma');
-      reply += `> *${time}*: ${icon_to_emoji[hour.icon]} _*${hour.summary}_ \n`;
+      reply += `> *${time}*: ${icon_to_emoji[hour.icon]} _${hour.summary}_ \n`;
     });
 
     bot.reply(message, reply);
