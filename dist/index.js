@@ -9,8 +9,8 @@ var _require = require('./lib/controller');
 
 var controller = _require.controller;
 
-var commands = require('./lib/conversation');
-var convBase = './lib/conversation/';
+var commands = require('./lib/commands');
+var commBase = './lib/commands/';
 var server = require('./lib/server');
 var config = require('./config');
 var port = process.env.PORT || config.SERVER_PORT;
@@ -18,8 +18,9 @@ var ip = process.env.OPENSHIFT_NODEJS_IP || config.IP;
 var express = require('express');
 var bodyParser = require('body-parser');
 
+//Load all commands
 commands.forEach(function (command) {
-  controller.hears(command.patterns, command.scope, require(convBase + command.handler));
+  controller.hears(command.patterns, command.scope, require(commBase + command.handler));
 });
 
 //controller.setupWebserver(port, server);
