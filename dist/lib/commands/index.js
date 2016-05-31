@@ -37,8 +37,8 @@ module.exports = [{
   handler: 'weather',
   help: 'Say `weather {location}` to get a forecast'
 }, {
-  patterns: ['say hi', 'say hello'],
+  patterns: ['greet', 'greetings'],
   scope: normalScope,
   handler: 'greeting',
-  help: 'Say `say hi` or `say hello` to make me greet everyone'
+  help: 'Say `greet` or `greetings` to make me greet everyone'
 }];
