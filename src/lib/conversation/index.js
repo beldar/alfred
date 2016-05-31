@@ -35,5 +35,11 @@ module.exports = [
     scope   : normalScope,
     handler : 'unsubscribePR',
     help    : 'Say `unsubscribe from PRs` to stop receiving the updates on your PRs'
+  },
+  {
+    patterns: ['weather (.*)$'],
+    scope   : normalScope,
+    handler : 'weather',
+    help    : 'Say `weather {location}` to get a forecast'
   }
 ];
