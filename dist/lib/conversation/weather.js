@@ -51,12 +51,12 @@ module.exports = function (bot, message) {
 
     throw new Error('Not found');
   }).then(function (forecast) {
-    var reply = 'The weather at *' + formattedLoc + '* looks like ' + icon_to_emoji[forecast.hourly.icon] + ':\n';
+    var reply = 'The weather in *' + formattedLoc + '* looks like ' + icon_to_emoji[forecast.hourly.icon] + ':\n';
     reply += '_' + forecast.hourly.summary + '_ \n';
 
     forecast.hourly.data.slice(0, 10).forEach(function (hour) {
       var time = moment.unix(hour.time).format('hh:mma');
-      reply += '> *' + time + '*: ' + icon_to_emoji[hour.icon] + ' _*' + hour.summary + '_ \n';
+      reply += '> *' + time + '*: ' + icon_to_emoji[hour.icon] + ' _' + hour.summary + '_ \n';
     });
 
     bot.reply(message, reply);

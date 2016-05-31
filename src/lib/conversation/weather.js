@@ -46,7 +46,7 @@ module.exports = (bot, message) => {
     throw new Error('Not found');
   })
   .then((forecast) => {
-    let reply = `The weather at *${formattedLoc}* looks like ${icon_to_emoji[forecast.hourly.icon]}:\n`
+    let reply = `The weather in *${formattedLoc}* looks like ${icon_to_emoji[forecast.hourly.icon]}:\n`
     reply += `_${forecast.hourly.summary}_ \n`;
 
     forecast.hourly.data

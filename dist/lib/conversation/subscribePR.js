@@ -32,7 +32,7 @@ var askUsername = function askUsername(response, convo) {
       controller.storage.users.save(user, function (err, id) {
         if (err) return utils.handleStorageError(err, convo, '', true);
 
-        convo.say('Excellent sir, from now on you\'ll receive a message every time that there\'s an update with your PRs');
+        convo.say('Excellent sir, from now on you\'ll receive a message every time there\'s an update with your PRs');
         convo.next();
       });
     });
