@@ -41,4 +41,9 @@ module.exports = [{
   scope: normalScope,
   handler: 'greeting',
   help: 'Say `greet` or `greetings` to make me greet everyone'
+}, {
+  patterns: ['time (.*)$'],
+  scope: normalScope,
+  handler: 'timezone',
+  help: 'Say `time {location}` to get a local time'
 }];
