@@ -23,7 +23,7 @@ var askUsername = function askUsername(response, convo) {
 
       if (!user) {
         user = {
-          userId: message.user
+          userId: response.user
         };
       }
 
