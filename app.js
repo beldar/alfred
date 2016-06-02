@@ -18,8 +18,7 @@ commands.forEach(command => {
   controller.hears(command.patterns, command.scope, require(commBase + command.handler));
 });
 
-//controller.setupWebserver(port, server);
-
+//Start webserver
 const webserver = express();
 webserver.use(bodyParser.json());
 webserver.use(bodyParser.urlencoded({ extended: true }));
