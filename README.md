@@ -16,7 +16,7 @@ To run Alfred you need some environment variables:
 - `GM_API_KEY` for the geocoding service used by time or weather, get one [from here](console.developers.google.com)
 - `SLACK_TOKEN` to be able to receive and send messages from slack
 
-To set up Alfred on your Slack team at `Custom integrations > Bots` you will be able to set your bot's name, handle and you will get the `SLACK_TOKEN`.
+To set up Alfred on your Slack team you need to add the `Bots` integration, you can search on it or go to `http://<your slack domain>/apps/new/A0F7YS25R-bots`. You will be able to set your bot's name, handle and you will get the `SLACK_TOKEN`.
 
 ## Run
 
