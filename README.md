@@ -87,4 +87,9 @@ The `message` is an object that contains several things like:
 
 If we need to access the storage to save or retrieve information about the current user we need to import the controller (as seen on the first line).
 
-And also import the utils module to handle possible storage errors for us.
+And also import the utils module to handle possible storage errors for us and add a reaction to the message.
+
+You can also do more complex things like a [multi-message conversation](https://github.com/howdyai/botkit#botstartprivateconversation) check an example on the [subscribePR file](src/lib/commands/subscribePR.js).
+
+
+Once you've created your feature, submit a PR!
