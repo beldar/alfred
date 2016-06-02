@@ -1,6 +1,6 @@
 {
   "name": "alfred",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "description": "Slack bot for your satisfaction",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,8 @@
     "mongodb": "^2.1.20",
     "mongojs": "^2.4.0",
     "node-fetch": "^1.5.3",
-    "node-geocoder": "^3.10.0"
+    "node-geocoder": "^3.10.0",
+    "wolfram": "^0.3.2"
   },
   "engines": {
     "node": "6.0.0",
