@@ -30,7 +30,9 @@
     "botkit": "^0.2.0",
     "express": "^4.13.4",
     "forecast.io-bluebird": "0.0.1",
+    "geo-timezone": "^1.0.2",
     "moment": "^2.13.0",
+    "moment-timezone": "^0.5.4",
     "mongodb": "^2.1.20",
     "mongojs": "^2.4.0",
     "node-geocoder": "^3.10.0"
