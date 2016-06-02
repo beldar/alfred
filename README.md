@@ -28,7 +28,7 @@ To run Alfred just do
 
 Adding new features to Alfred is really easy and can be done in two steps:
 
-The first step is to add your feature on `src/lib/commands/index.js` like this:
+The first step is to add your feature on `lib/commands/index.js` like this:
 
     {
       patterns: ['call me (.*)', 'my name is (.*)'],
@@ -41,7 +41,7 @@ The first step is to add your feature on `src/lib/commands/index.js` like this:
 
 - `scope` are the events when Alfred should be listening, the `normalScope` is `direct_message,direct_mention,mention` which should work for most cases.
 
-- `handler` is the name of the file of your handler and it should be placed inside the `src/lib/commands` folder, on this example the file is `src/lib/commands/name.js`.
+- `handler` is the name of the file of your handler and it should be placed inside the `lib/commands` folder, on this example the file is `lib/commands/name.js`.
 
 - `help` is the explanation for your feature that will appear when someone asks for `help`.
 
@@ -89,7 +89,7 @@ If we need to access the storage to save or retrieve information about the curre
 
 And also import the utils module to handle possible storage errors for us and add a reaction to the message.
 
-You can also do more complex things like a [multi-message conversation](https://github.com/howdyai/botkit#botstartprivateconversation) check an example on the [subscribePR file](src/lib/commands/subscribePR.js).
+You can also do more complex things like a [multi-message conversation](https://github.com/howdyai/botkit#botstartprivateconversation) check an example on the [subscribePR file](lib/commands/subscribePR.js).
 
 
 Once you've created your feature, submit a PR!
