@@ -34,7 +34,6 @@ module.exports = function (bot, message) {
         coordinates: [longitude, latitude]
       }, function (err, result) {
         if (!err) {
-          console.log(result);
           var time = MomentTimezone().tz(result.timeZoneId).format("h:mm a");
           bot.reply(message, 'The time in *' + formattedLoc + '* is ' + time);
         }

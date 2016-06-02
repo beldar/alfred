@@ -4,7 +4,7 @@ var commands = require('./index');
 var version = require('../../../package.json').version;
 
 module.exports = function (bot, message) {
-          var reply = 'I\'m Alfred v' + version + ' created by Marti Planellas\n\n Here are my current commands:\n\n';
+          var reply = 'I\'m Alfred v' + version + ' your Slack butler\n\n Here are my current commands:\n\n';
 
           reply += commands.filter(function (command) {
                     return command.help;
