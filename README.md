@@ -14,6 +14,7 @@ To run Alfred you need some environment variables:
 
 - `FORECAST_API_KEY` for the weather service, get one [from here](https://developer.forecast.io/)
 - `GM_API_KEY` for the geocoding service used by time or weather, get one [from here](console.developers.google.com)
+- `WOLFRAM_APPID` for the wolfram integration, get one [from here](http://products.wolframalpha.com/api/)
 - `SLACK_TOKEN` to be able to receive and send messages from slack
 
 To set up Alfred on your Slack team you need to add the `Bots` integration, you can search on it or go to `http://<your slack domain>/apps/new/A0F7YS25R-bots`. You will be able to set your bot's name, handle and you will get the `SLACK_TOKEN`.
@@ -23,6 +24,28 @@ To set up Alfred on your Slack team you need to add the `Bots` integration, you 
 To run Alfred just do
 
     npm start
+
+## Current commands
+
+• Say `hi` or `hello` to receive a greating
+
+• Say `my name is {name}` or `call me {name}` if you want me to remember your name
+
+• Say `help` to get these options
+
+• Say `subscribe to my PRs` to get messages about the updates on your PRs
+
+• Say `unsubscribe from PRs` to stop receiving the updates on your PRs
+
+• Say `weather {location}` to get a forecast
+
+• Say `greet` or `greetings` to make me greet everyone
+
+• Say `time {location}` to get a local time
+
+• Say `stackoverflow {language/tag} {query}` to get the first result on stackoverflow for that query
+
+All non matched commands will be resolved using the [`wolfram`](lib/commands/wolfram.js) command.
 
 ## Collaborate
 
