@@ -9,7 +9,7 @@ const commBase   = './lib/commands/';
 const server     = require('./lib/server');
 const config     = require('./config');
 const port       = (process.env.PORT || config.SERVER_PORT);
-const ip         = (process.env.OPENSHIFT_NODEJS_IP || config.IP);
+const ip         = (process.env.IP || config.IP);
 const express    = require('express');
 const bodyParser = require('body-parser');
 
