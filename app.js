@@ -9,7 +9,6 @@ const commBase   = './lib/commands/';
 const server     = require('./lib/server');
 const config     = require('./config');
 const port       = (process.env.PORT || config.SERVER_PORT);
-const ip         = (process.env.IP || config.IP);
 const express    = require('express');
 const bodyParser = require('body-parser');
 
@@ -22,8 +21,8 @@ commands.forEach(command => {
 const webserver = express();
 webserver.use(bodyParser.json());
 webserver.use(bodyParser.urlencoded({ extended: true }));
-webserver.listen(port, ip, () => {
-  console.log(`Listening on ${ip}:${port}`);
+webserver.listen(port, () => {
+  console.log(`Listening on port ${port}`);
   server(webserver);
 });
 
