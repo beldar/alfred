@@ -45,6 +45,10 @@ To run Alfred just do
 
 • Say `stackoverflow {language/tag} {query}` to get the first result on stackoverflow for that query
 
+• Say `random pick set {comma separated list}` to set up the list for a random pick, this could be people's names or any other list of things
+
+• Say `random pick get` to get a random pick from a list set before hand
+
 All non matched commands will be resolved using the [`wolfram`](lib/commands/wolfram.js) command.
 
 ## Collaborate
