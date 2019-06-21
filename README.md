@@ -49,6 +49,10 @@ To run Alfred just do
 
 • Say `random pick get` to get a random pick from a list set before hand
 
+• Say `rota pick set {comma separated list}` to set up the list for a rota pick, this could be people's names or any other list of things
+
+• Say `rota pick get` to get a rota pick from a list set before hand
+
 All non matched commands will be resolved using the [`wolfram`](lib/commands/wolfram.js) command.
 
 ## Collaborate
